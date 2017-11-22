@@ -47,6 +47,14 @@ public protocol LooponEvent: Codable
 	var type: LooponEventType { get }
 }
 
+/// Class used by LooponSocket as a helper to decide which kind of message to try decoding.
+internal class LooponConcreteEvent: LooponEvent
+{
+	var sessionId: String
+	var created: LooponDate
+	var type: LooponEventType
+}
+
 public enum LooponEventType: String, Codable
 {
 	/// Either guest or hotel has written a message.

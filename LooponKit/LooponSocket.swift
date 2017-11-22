@@ -44,6 +44,15 @@ public protocol LooponSocketDelegate
 
 	/// Sent when a message is received through the socket.
 	func looponSocket(_ socket: LooponSocket, received chatMessage: LooponChatMessage)
+
+	/// Sent when an error message is received through the socket.
+	func looponSocket(_ socket: LooponSocket, received errorMessage: LooponErrorMessage)
+
+	/// Sent when a typing indicator is received through the socket.
+	func looponSocket(_ socket: LooponSocket, received typingIndicator: LooponTypingIndicator)
+
+	/// Sent when a runtime error happens.
+	func looponSocket(_ socket: LooponSocket, producedError error: Error)
 }
 
 /// Class used to manage a socket connection to Loopon's chat servers.
@@ -66,11 +75,7 @@ public class LooponSocket: NSObject
 
 	public func send(chatMessage: LooponChatMessage) throws
 	{
-		let data = try JSONEncoder().encode(chatMessage)
-
-		print("Sending JSON: \(String(data: data, encoding: .utf8) ?? "null data")")
-
-		socket?.send(data)
+		socket?.send(try JSONEncoder().encode(chatMessage))
 	}
 
 	/// Closes the socket cleanly.
@@ -125,6 +130,11 @@ public class LooponSocket: NSObject
 		}
 	}
 
+	enum SocketError: Error
+	{
+		case badSocketMessage(Any)
+	}
+
 	private func parseSocketMessage(_ socketMessage: String)
 	{
 		guard let delegate = self.delegate else
@@ -141,12 +151,27 @@ public class LooponSocket: NSObject
 			{
 				do
 				{
-					let message = try jsonDecoder.decode(LooponChatMessage.self, from: messageData)
-					DispatchQueue.main.async { delegate.looponSocket(self, received: message) }
+					let event = try jsonDecoder.decode(LooponConcreteEvent.self, from: messageData)
+
+					switch event.type
+					{
+					case .chatMessage:
+						let message = try jsonDecoder.decode(LooponChatMessage.self, from: messageData)
+						DispatchQueue.main.async { delegate.looponSocket(self, received: message) }
+
+					case .typingIndicator:
+						let typingIndicator = try jsonDecoder.decode(LooponTypingIndicator.self, from: messageData)
+						DispatchQueue.main.async { delegate.looponSocket(self, received: typingIndicator) }
+
+					case .errorMessage:
+						let error = try jsonDecoder.decode(LooponErrorMessage.self, from: messageData)
+						DispatchQueue.main.async { delegate.looponSocket(self, received: error) }
+					}
 				}
 				catch
 				{
 					print("Failed parsing socket message! \(error)")
+					DispatchQueue.main.async { delegate.looponSocket(self, producedError: error) }
 				}
 			}
 		}
@@ -159,10 +184,7 @@ extension LooponSocket: SRWebSocketDelegate
 	{
 		if let delegate = self.delegate
 		{
-			DispatchQueue.main.async
-				{
-					delegate.looponSocketDidOpen(self)
-				}
+			DispatchQueue.main.async { delegate.looponSocketDidOpen(self) }
 		}
 	}
 
@@ -175,10 +197,7 @@ extension LooponSocket: SRWebSocketDelegate
 
 		if let delegate = self.delegate
 		{
-			DispatchQueue.main.async
-				{
-					delegate.looponSocket(self, didCloseCleanly: wasClean)
-				}
+			DispatchQueue.main.async { delegate.looponSocket(self, didCloseCleanly: wasClean) }
 		}
 	}
 
@@ -195,6 +214,12 @@ extension LooponSocket: SRWebSocketDelegate
 		else
 		{
 			print("Could not parse socket message! \(message)")
+
+			if let delegate = self.delegate
+			{
+				let error = SocketError.badSocketMessage(message)
+				DispatchQueue.main.async { delegate.looponSocket(self, producedError: error) }
+			}
 		}
 	}
 }
