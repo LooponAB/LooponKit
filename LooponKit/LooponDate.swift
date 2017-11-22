@@ -5,7 +5,7 @@
 //  Created by Bruno Resende on 21/11/2017.
 //  Copyright © 2017 Loopon AB
 //  API Documentation: https://api.loopon.com/public
-//  Contact us at contact@loopon.com
+//  Contact us at support@loopon.com
 //  
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the 
 //  following conditions are met:
