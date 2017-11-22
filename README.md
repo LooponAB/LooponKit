@@ -103,6 +103,9 @@ func sendMessage(_ text: String)
 	do
 	{
 		try self.chatSocket.send(chatMessage: message)
+		
+		// Add to pending messages
+		self.pendingMessages.append(message)
 	}
 	catch
 	{
@@ -113,7 +116,24 @@ func sendMessage(_ text: String)
 
 You should display the message as "pending" to the user, for now.
 
-If and when the message is sent successfully, you will receive it back in the socket through the `looponSocket:receivedChatMessage:` delegate method. Only then you should "commit" the message in the UI, and store it locally if you are going to cache messages locally.
+If and when the message is sent successfully, you will receive it back in the socket through the `looponSocket:receivedChatMessage:` delegate method. Only then you should "commit" the message in the UI, and store it locally if you are going to cache messages locally:
+
+```swift
+func looponSocket(_ socket: LooponSocket, received chatMessage: LooponChatMessage)
+{
+	// Check if we sent this message, by looking for a pending message with the same `localId`.
+	if let receivedLocalId = chatMessage.localId, let pendingMessage = pendingMessages.first(where: { $0.localId == receivedLocalId })
+	{
+		// "Commit" the message, that is, mark it as "sent".
+		commit(pendingMessage, with: chatMessage)
+	}
+	else
+	{
+		// This message was sent from some other client. Jut add it to your chat log UI.
+		add(chatMessage)
+	}
+}
+```
 
 ## License
 
