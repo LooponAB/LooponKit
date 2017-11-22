@@ -69,6 +69,56 @@ func looponSocket(_ socket: LooponSocket, producedError error: Error)
 ```
 
 The difference between `looponSocket:receivedErrorMessage:` and `looponSocket:producedError:` is that the first is called when an error is sent from the server, and the second when an error is produced locally.
+
+### Creating a Guest Stay
+
+Your application should communicate with your backend, which in turn should talk to Loopon's backend t produce a guest stay (read more in the api documentation). After that is done, your application's backend should push the Guest Stay JSON object back to your app. The encoded JSON object as `Data` is represented by `guestStayJsonData` below:
+
+```swift
+func gotStay(_ guestStayJsonData: Data)
+{
+	do
+	{
+		self.guestStay = try JSONDecoder().decode(LooponGuestStay.self, from: guestStayJsonData)
+	}
+	catch
+	{
+		print("Error decoding guest stay JSON: \(error)")
+	}
+}
+```
+
+### Sending messages
+
+To send a message from your app, create a `LooponChatMessage` object locally, and send it using `sendChatmessage:`:
+
+```swift
+func sendMessage(_ text: String)
+{
+	guard let sessionId = self.guestStay?.chatSession.sessionId else
+	{
+		print("There doesn't seem to be an initialized chat session.")
+		return
+	}
+
+	let trimmedMessage = message.trimmingCharacters(in: .whitespacesAndNewlines)
+	let message = LooponChatMessage(content: trimmedMessage, type: .plainText, sessionId: sessionId)
+	
+	do
+	{
+		try self.chatSocket.send(chatMessage: message)
+	}
+	catch
+	{
+		print("Error sending chat message: \(error)")
+	}
+}
+```
+
+You should display the message as "pending" to the user, for now.
+
+If and when the message is sent successfully, you will receive it back in the socket through the `looponSocket:receivedChatMessage:` delegate method. Only then you should "commit" the message in the UI, and store it locally if you are going to cache messages locally.
+
 ## License
 
 ```
