@@ -18,17 +18,20 @@ This library contains models, connectors, and helper functions that allow an iOS
 Your app's backend needs to communicate with Loopon's backend and request the registration of a Guest Stay. When that is performed successfully, you will receive a websocket URL to use with `LooponSocket`. This is represented by `LOOPON_WSS_URL`.
 
 ```swift
-// This should ideally be a class property, as you only need a single instance.
-let chatSocket = LooponSocket()
-chatSocket.delegate = self
-chatSocket.url = "wss://LOOPON_WSS_URL"
+func buildSocket()
+{
+	// This should ideally be a class property, as you only need a single instance.
+	self.chatSocket = LooponSocket()
+	self.chatSocket.delegate = self
+	self.chatSocket.url = "wss://LOOPON_WSS_URL"
+}
 
-// MARK: Delegate methods:
+// MARK: Chat Socket Delegate methods:
 
 /// Sent when the socket connects successfully.
 func looponSocketDidOpen(_ looponSocket: LooponSocket)
 {
-
+	print("Socket opened!")
 }
 
 /// Sent when the socket closes. If this was caused by an error or timeout, `didCloseCleanly` will be `false`, and
@@ -36,17 +39,36 @@ func looponSocketDidOpen(_ looponSocket: LooponSocket)
 /// If this succeeds, another call to `looponSocketDidOpen:` will be made.
 func looponSocket(_ looponSocket: LooponSocket, didCloseCleanly: Bool)
 {
-
+	print("Socket closed!")
 }
 
 /// Sent when a message is received through the socket.
 func looponSocket(_ socket: LooponSocket, received chatMessage: LooponChatMessage)
 {
+	print("Got chat message from \(chatMessage.authorName): \(chatMessage.content ?? "")")
+}
 
+/// Sent when an error message is received through the socket.
+func looponSocket(_ socket: LooponSocket, received errorMessage: LooponErrorMessage)
+{
+	print("Socket got error: \(errorMessage)!")
+}
+
+/// Sent when a typing indicator is received through the socket.
+func looponSocket(_ socket: LooponSocket, received typingIndicator: LooponTypingIndicator)
+{
+	print("Socket got typing indicator: \(typingIndicator)!")
+}
+
+/// Sent when a runtime error happens.
+func looponSocket(_ socket: LooponSocket, producedError error: Error)
+{
+	print("Socket got runtime error: \(error)!")
 }
 
 ```
 
+The difference between `looponSocket:receivedErrorMessage:` and `looponSocket:producedError:` is that the first is called when an error is sent from the server, and the second when an error is produced locally.
 ## License
 
 ```
