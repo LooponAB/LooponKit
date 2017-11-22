@@ -94,11 +94,11 @@ open class LooponChatMessage: LooponEvent
 	}
 
 	/// Creates a message event with a string.
-	public init(content: String, type: ContentType, sessionId: String, localId: String? = nil)
+	public init(content: String, type: ContentType, localId: String? = nil)
 	{
 		let created = LooponDate()
 
-		self.sessionId = sessionId
+		self.sessionId = ""
 		self.created = created
 		self.type = .chatMessage
 		self.id = 0
@@ -115,11 +115,11 @@ open class LooponChatMessage: LooponEvent
 	}
 
 	/// Creates a message event with a URL.
-	public init(url: URL, type: ContentType, sessionId: String, localId: String? = nil)
+	public init(url: URL, type: ContentType, localId: String? = nil)
 	{
 		let created = LooponDate()
 
-		self.sessionId = sessionId
+		self.sessionId = ""
 		self.created = created
 		self.type = .chatMessage
 		self.id = 0

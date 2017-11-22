@@ -13,9 +13,27 @@ This library contains models, connectors, and helper functions that allow an iOS
 
 ## Examples
 
+### Creating a Guest Stay
+
+Your application should communicate with your backend, which in turn should talk to Loopon's backend to produce a guest stay (read more in the api documentation). After that is done, your application's backend should push the Guest Stay JSON object back to your app. You can decode the JSON yourself, if you wish, but LooponKit can do it for you in one line. The encoded JSON object as `Data` is represented by `guestStayJsonData` below:
+
+```swift
+func gotStay(_ guestStayJsonData: Data)
+{
+	do
+	{
+		self.guestStay = try JSONDecoder().decode(LooponGuestStay.self, from: guestStayJsonData)
+	}
+	catch
+	{
+		print("Error decoding guest stay JSON: \(error)")
+	}
+}
+```
+
 ### LooponSocket
 
-Your app's backend needs to communicate with Loopon's backend and request the registration of a Guest Stay. When that is performed successfully, you will receive a websocket URL to use with `LooponSocket`. This is represented by `LOOPON_WSS_URL`.
+After you have the guest stay stored locally, you can start sending messages. For that, simply instantiate a `LooponSocket` object, set the delegate who will receive calls when messages arrive, and set the socket URL to connect to. The URL can be found in the guest stay object:
 
 ```swift
 func buildSocket()
@@ -23,6 +41,9 @@ func buildSocket()
 	// This should ideally be a class property, as you only need a single instance.
 	self.chatSocket = LooponSocket()
 	self.chatSocket.delegate = self
+	
+	// This will cause the chat socket to connect automatically.
+	self.chatSocket.url = self.guestStay.chatSession.wssUrl
 }
 
 // MARK: Chat Socket Delegate methods:
@@ -69,42 +90,15 @@ func looponSocket(_ socket: LooponSocket, producedError error: Error)
 
 The difference between `looponSocket:receivedErrorMessage:` and `looponSocket:producedError:` is that the first is called when an error is sent from the server, and the second when an error is produced locally.
 
-### Creating a Guest Stay
-
-Your application should communicate with your backend, which in turn should talk to Loopon's backend t produce a guest stay (read more in the api documentation). After that is done, your application's backend should push the Guest Stay JSON object back to your app. The encoded JSON object as `Data` is represented by `guestStayJsonData` below:
-
-```swift
-func gotStay(_ guestStayJsonData: Data)
-{
-	do
-	{
-		self.guestStay = try JSONDecoder().decode(LooponGuestStay.self, from: guestStayJsonData)
-		
-		// This will cause the chat socket to connect automatically.
-		self.chatSocket.url = stay.chatSession.wssUrl
-	}
-	catch
-	{
-		print("Error decoding guest stay JSON: \(error)")
-	}
-}
-```
-
 ### Sending messages
 
-To send a message from your app, create a `LooponChatMessage` object locally, and send it using `sendChatMessage:`:
+To send a message from your app, create a `LooponChatMessage` object locally, and send it using the `sendChatMessage:` method on the chat socket:
 
 ```swift
 func sendMessage(_ text: String)
 {
-	guard let sessionId = self.guestStay?.chatSession.sessionId else
-	{
-		print("There doesn't seem to be an initialized chat session.")
-		return
-	}
-
-	let trimmedMessage = message.trimmingCharacters(in: .whitespacesAndNewlines)
-	let message = LooponChatMessage(content: trimmedMessage, type: .plainText, sessionId: sessionId)
+	let trimmedMessage = text.trimmingCharacters(in: .whitespacesAndNewlines)
+	let message = LooponChatMessage(content: trimmedMessage, type: .plainText)
 	
 	do
 	{
