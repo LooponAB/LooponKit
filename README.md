@@ -90,7 +90,7 @@ func gotStay(_ guestStayJsonData: Data)
 
 ### Sending messages
 
-To send a message from your app, create a `LooponChatMessage` object locally, and send it using `sendChatmessage:`:
+To send a message from your app, create a `LooponChatMessage` object locally, and send it using `sendChatMessage:`:
 
 ```swift
 func sendMessage(_ text: String)
