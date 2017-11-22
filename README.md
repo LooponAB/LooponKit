@@ -23,7 +23,6 @@ func buildSocket()
 	// This should ideally be a class property, as you only need a single instance.
 	self.chatSocket = LooponSocket()
 	self.chatSocket.delegate = self
-	self.chatSocket.url = "wss://LOOPON_WSS_URL"
 }
 
 // MARK: Chat Socket Delegate methods:
