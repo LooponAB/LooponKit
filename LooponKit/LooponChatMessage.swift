@@ -62,10 +62,10 @@ open class LooponChatMessage: LooponEvent
 	/// Which media was used to send/receive this message.
 	public let media: Media
 
-	/// Content of message (valid for `text/plain` and `text/html`).
+	/// Fully qualified URL to content data (valid for `image/png`, `image/gif` and `image/jpeg`) content types.
 	public let url: URL?
 
-	/// Fully qualified URL to content data (valid for `image/png`, `image/gif` and `image/jpeg`) content types.
+	/// Content of message (valid for `text/plain` and `text/html`).
 	public let content: String?
 
 	/// Describes the type of content included in this chat message.
@@ -159,6 +159,12 @@ open class LooponChatMessage: LooponEvent
 
 		/// Message sent using Loopon chat.
 		case webchat
+
+		/// Message sent though the public API.
+		case appchat
+
+		/// Message sent through email.
+		case email
 	}
 
 	/// The mime type of the chat message contents.
