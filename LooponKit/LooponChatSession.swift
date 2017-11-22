@@ -40,5 +40,5 @@ public class LooponChatSession: Decodable
 	/// Fully qualified URL to the web socket your guest app needs to connect to. Note that this will always point to a
 	/// secure WSS URL, and that this URL will stay constant for the duration of the stay, so you can cache it in your
 	/// own backend.
-	public let wssUrl: String
+	public let wssUrl: URL
 }

@@ -80,6 +80,9 @@ func gotStay(_ guestStayJsonData: Data)
 	do
 	{
 		self.guestStay = try JSONDecoder().decode(LooponGuestStay.self, from: guestStayJsonData)
+		
+		// This will cause the chat socket to connect automatically.
+		self.chatSocket.url = stay.chatSession.wssUrl
 	}
 	catch
 	{
