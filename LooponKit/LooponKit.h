@@ -2,7 +2,7 @@
 //  LooponKit.h
 //  LooponKit
 //
-//  Created by Bruno Resende on 22/11/2017.
+//  Created by Bruno Resende on 17/11/2017.
 //  Copyright © 2017 Loopon AB. All rights reserved.
 //
 

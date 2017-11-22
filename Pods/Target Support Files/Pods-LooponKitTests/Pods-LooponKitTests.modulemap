@@ -1,0 +1,6 @@
+framework module Pods_LooponKitTests {
+  umbrella header "Pods-LooponKitTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

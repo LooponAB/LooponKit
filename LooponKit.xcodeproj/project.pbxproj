@@ -10,6 +10,19 @@
 		0DB0DAFB1FC5A489007F0B96 /* LooponKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB0DAF11FC5A488007F0B96 /* LooponKit.framework */; };
 		0DB0DB001FC5A489007F0B96 /* LooponKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DAFF1FC5A489007F0B96 /* LooponKitTests.swift */; };
 		0DB0DB021FC5A489007F0B96 /* LooponKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB0DAF41FC5A489007F0B96 /* LooponKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DB0DB161FC5A4C8007F0B96 /* LooponChatSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB0B1FC5A4C8007F0B96 /* LooponChatSession.swift */; };
+		0DB0DB171FC5A4C8007F0B96 /* LooponGuestStay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB0C1FC5A4C8007F0B96 /* LooponGuestStay.swift */; };
+		0DB0DB181FC5A4C8007F0B96 /* LooponChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB0D1FC5A4C8007F0B96 /* LooponChatMessage.swift */; };
+		0DB0DB191FC5A4C8007F0B96 /* LooponEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB0E1FC5A4C8007F0B96 /* LooponEvent.swift */; };
+		0DB0DB1A1FC5A4C8007F0B96 /* LooponSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB0F1FC5A4C8007F0B96 /* LooponSocket.swift */; };
+		0DB0DB1B1FC5A4C8007F0B96 /* LooponUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB101FC5A4C8007F0B96 /* LooponUnit.swift */; };
+		0DB0DB1C1FC5A4C8007F0B96 /* LooponErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB111FC5A4C8007F0B96 /* LooponErrorMessage.swift */; };
+		0DB0DB1D1FC5A4C8007F0B96 /* LooponAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB121FC5A4C8007F0B96 /* LooponAuthorization.swift */; };
+		0DB0DB1E1FC5A4C8007F0B96 /* LooponDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB131FC5A4C8007F0B96 /* LooponDate.swift */; };
+		0DB0DB1F1FC5A4C8007F0B96 /* LooponGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB141FC5A4C8007F0B96 /* LooponGuest.swift */; };
+		0DB0DB201FC5A4C8007F0B96 /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DB151FC5A4C8007F0B96 /* String+Hash.swift */; };
+		74356503C7CB0940FFAFCCCB /* Pods_LooponKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE3791B6D4DD9D972CC69CC /* Pods_LooponKitTests.framework */; };
+		F98C479AD1FBA24BBCD6EB17 /* Pods_LooponKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD595F4D372BA62689CFA5A /* Pods_LooponKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +42,23 @@
 		0DB0DAFA1FC5A489007F0B96 /* LooponKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LooponKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB0DAFF1FC5A489007F0B96 /* LooponKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponKitTests.swift; sourceTree = "<group>"; };
 		0DB0DB011FC5A489007F0B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB0DB0B1FC5A4C8007F0B96 /* LooponChatSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponChatSession.swift; sourceTree = "<group>"; };
+		0DB0DB0C1FC5A4C8007F0B96 /* LooponGuestStay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponGuestStay.swift; sourceTree = "<group>"; };
+		0DB0DB0D1FC5A4C8007F0B96 /* LooponChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponChatMessage.swift; sourceTree = "<group>"; };
+		0DB0DB0E1FC5A4C8007F0B96 /* LooponEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponEvent.swift; sourceTree = "<group>"; };
+		0DB0DB0F1FC5A4C8007F0B96 /* LooponSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponSocket.swift; sourceTree = "<group>"; };
+		0DB0DB101FC5A4C8007F0B96 /* LooponUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponUnit.swift; sourceTree = "<group>"; };
+		0DB0DB111FC5A4C8007F0B96 /* LooponErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponErrorMessage.swift; sourceTree = "<group>"; };
+		0DB0DB121FC5A4C8007F0B96 /* LooponAuthorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponAuthorization.swift; sourceTree = "<group>"; };
+		0DB0DB131FC5A4C8007F0B96 /* LooponDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponDate.swift; sourceTree = "<group>"; };
+		0DB0DB141FC5A4C8007F0B96 /* LooponGuest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooponGuest.swift; sourceTree = "<group>"; };
+		0DB0DB151FC5A4C8007F0B96 /* String+Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
+		2DD595F4D372BA62689CFA5A /* Pods_LooponKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LooponKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		652ED07B65E1F003F964F675 /* Pods-LooponKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LooponKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LooponKitTests/Pods-LooponKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		754B1E52600D5FF387F93AFF /* Pods-LooponKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LooponKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LooponKitTests/Pods-LooponKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A42F6BA7107BCB8D71E56A3B /* Pods-LooponKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LooponKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LooponKit/Pods-LooponKit.release.xcconfig"; sourceTree = "<group>"; };
+		AFE3791B6D4DD9D972CC69CC /* Pods_LooponKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LooponKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76151265388AA6213955688 /* Pods-LooponKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LooponKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LooponKit/Pods-LooponKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98C479AD1FBA24BBCD6EB17 /* Pods_LooponKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB0DAFB1FC5A489007F0B96 /* LooponKit.framework in Frameworks */,
+				74356503C7CB0940FFAFCCCB /* Pods_LooponKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +88,8 @@
 				0DB0DAF31FC5A489007F0B96 /* LooponKit */,
 				0DB0DAFE1FC5A489007F0B96 /* LooponKitTests */,
 				0DB0DAF21FC5A488007F0B96 /* Products */,
+				9BC5DFA55EDC8E7DB7F59B13 /* Pods */,
+				6132D2207517E224D5CEDB9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +106,17 @@
 			isa = PBXGroup;
 			children = (
 				0DB0DAF41FC5A489007F0B96 /* LooponKit.h */,
+				0DB0DB121FC5A4C8007F0B96 /* LooponAuthorization.swift */,
+				0DB0DB0D1FC5A4C8007F0B96 /* LooponChatMessage.swift */,
+				0DB0DB0B1FC5A4C8007F0B96 /* LooponChatSession.swift */,
+				0DB0DB131FC5A4C8007F0B96 /* LooponDate.swift */,
+				0DB0DB111FC5A4C8007F0B96 /* LooponErrorMessage.swift */,
+				0DB0DB0E1FC5A4C8007F0B96 /* LooponEvent.swift */,
+				0DB0DB141FC5A4C8007F0B96 /* LooponGuest.swift */,
+				0DB0DB0C1FC5A4C8007F0B96 /* LooponGuestStay.swift */,
+				0DB0DB0F1FC5A4C8007F0B96 /* LooponSocket.swift */,
+				0DB0DB101FC5A4C8007F0B96 /* LooponUnit.swift */,
+				0DB0DB151FC5A4C8007F0B96 /* String+Hash.swift */,
 				0DB0DAF51FC5A489007F0B96 /* Info.plist */,
 			);
 			path = LooponKit;
@@ -84,6 +129,26 @@
 				0DB0DB011FC5A489007F0B96 /* Info.plist */,
 			);
 			path = LooponKitTests;
+			sourceTree = "<group>";
+		};
+		6132D2207517E224D5CEDB9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DD595F4D372BA62689CFA5A /* Pods_LooponKit.framework */,
+				AFE3791B6D4DD9D972CC69CC /* Pods_LooponKitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BC5DFA55EDC8E7DB7F59B13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E76151265388AA6213955688 /* Pods-LooponKit.debug.xcconfig */,
+				A42F6BA7107BCB8D71E56A3B /* Pods-LooponKit.release.xcconfig */,
+				754B1E52600D5FF387F93AFF /* Pods-LooponKitTests.debug.xcconfig */,
+				652ED07B65E1F003F964F675 /* Pods-LooponKitTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB0DB051FC5A489007F0B96 /* Build configuration list for PBXNativeTarget "LooponKit" */;
 			buildPhases = (
+				F69602841AB67520DCECF36F /* [CP] Check Pods Manifest.lock */,
 				0DB0DAEC1FC5A488007F0B96 /* Sources */,
 				0DB0DAED1FC5A488007F0B96 /* Frameworks */,
 				0DB0DAEE1FC5A488007F0B96 /* Headers */,
 				0DB0DAEF1FC5A488007F0B96 /* Resources */,
+				48C5AD7926CF0CDE9AA874D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB0DB081FC5A489007F0B96 /* Build configuration list for PBXNativeTarget "LooponKitTests" */;
 			buildPhases = (
+				E25D3B1B8DABD68822A8A8B2 /* [CP] Check Pods Manifest.lock */,
 				0DB0DAF61FC5A489007F0B96 /* Sources */,
 				0DB0DAF71FC5A489007F0B96 /* Frameworks */,
 				0DB0DAF81FC5A489007F0B96 /* Resources */,
+				A58CFDA2B680C8AF33A6B0E3 /* [CP] Embed Pods Frameworks */,
+				5A1344765F57CE66DBED5A06 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +218,7 @@
 				TargetAttributes = {
 					0DB0DAF01FC5A488007F0B96 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					0DB0DAF91FC5A489007F0B96 = {
@@ -191,11 +262,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48C5AD7926CF0CDE9AA874D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LooponKit/Pods-LooponKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A1344765F57CE66DBED5A06 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LooponKitTests/Pods-LooponKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A58CFDA2B680C8AF33A6B0E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LooponKitTests/Pods-LooponKitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LooponKitTests/Pods-LooponKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E25D3B1B8DABD68822A8A8B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LooponKitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F69602841AB67520DCECF36F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LooponKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0DB0DAEC1FC5A488007F0B96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB0DB1C1FC5A4C8007F0B96 /* LooponErrorMessage.swift in Sources */,
+				0DB0DB1F1FC5A4C8007F0B96 /* LooponGuest.swift in Sources */,
+				0DB0DB201FC5A4C8007F0B96 /* String+Hash.swift in Sources */,
+				0DB0DB1B1FC5A4C8007F0B96 /* LooponUnit.swift in Sources */,
+				0DB0DB1E1FC5A4C8007F0B96 /* LooponDate.swift in Sources */,
+				0DB0DB171FC5A4C8007F0B96 /* LooponGuestStay.swift in Sources */,
+				0DB0DB191FC5A4C8007F0B96 /* LooponEvent.swift in Sources */,
+				0DB0DB1D1FC5A4C8007F0B96 /* LooponAuthorization.swift in Sources */,
+				0DB0DB1A1FC5A4C8007F0B96 /* LooponSocket.swift in Sources */,
+				0DB0DB181FC5A4C8007F0B96 /* LooponChatMessage.swift in Sources */,
+				0DB0DB161FC5A4C8007F0B96 /* LooponChatSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -321,7 +490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -333,7 +502,9 @@
 		};
 		0DB0DB061FC5A489007F0B96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E76151265388AA6213955688 /* Pods-LooponKit.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +518,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.loopon.LooponKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = LooponKit/CommonCrypto;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,7 +527,9 @@
 		};
 		0DB0DB071FC5A489007F0B96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A42F6BA7107BCB8D71E56A3B /* Pods-LooponKit.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -368,6 +543,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.loopon.LooponKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = LooponKit/CommonCrypto;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -375,7 +551,9 @@
 		};
 		0DB0DB091FC5A489007F0B96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 754B1E52600D5FF387F93AFF /* Pods-LooponKitTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KYJ233SU6;
 				INFOPLIST_FILE = LooponKitTests/Info.plist;
@@ -389,7 +567,9 @@
 		};
 		0DB0DB0A1FC5A489007F0B96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 652ED07B65E1F003F964F675 /* Pods-LooponKitTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KYJ233SU6;
 				INFOPLIST_FILE = LooponKitTests/Info.plist;
