@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Describes all the information you need to pass on to your guest app in order to let it participate in a
+/// realtime conversation through the Loopon Chat Server WebSocket.
 public class LooponChatSession: Decodable
 {
 	/// Unique identifier of the chat session.

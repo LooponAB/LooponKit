@@ -8,8 +8,10 @@
 
 import Foundation
 
+/// Represents an Oauth2 authorization object.
 public struct LooponAuthorization: Codable
 {
+	/// Date when this object was created. Used in conjunction with `expiresIn` to calculate the expiration date.
 	private let created = Date()
 
 	/// The token type. Usually "Bearer".
@@ -34,6 +36,7 @@ public struct LooponAuthorization: Codable
 		case accessToken = "access_token"
 	}
 
+	/// A HTTP Header value based on the contents of this authorization.
 	public var httpHeaderValue: String
 	{
 		return "\(tokenType) \(accessToken)"

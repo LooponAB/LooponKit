@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Describes a chat message written either by the guest or the hotel.
 open class LooponChatMessage: LooponEvent
 {
 	public var sessionId: String
@@ -28,7 +29,7 @@ open class LooponChatMessage: LooponEvent
 	public let localId: String?
 
 	/// Which interlocutor composed this message.
-	public let author: Author
+	public let author: LooponComposer
 
 	/// User-displayable name of the author of this message.
 	public let authorName: String
@@ -124,15 +125,6 @@ open class LooponChatMessage: LooponEvent
 		try chatEventContainer.encode(contentType, forKey: .contentType)
 		try chatEventContainer.encode(url, forKey: .url)
 		try chatEventContainer.encode(content, forKey: .content)
-	}
-
-	public enum Author: String, Codable
-	{
-		/// This is a message composed by the hotel.
-		case hotel
-
-		/// This is a message composed by the guest.
-		case guest
 	}
 
 	public enum Media: String, Codable

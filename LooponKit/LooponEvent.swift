@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// All messages passed by Loopon on both the WebSocket connection as well as to the registered callback URL for the
+/// guest application backend will be of type LooponEvent.
 public protocol LooponEvent: Codable
 {
 	/// Unique identifier of the chat session this event is associated with. Note that this session id is used for
@@ -32,5 +34,5 @@ public enum LooponEventType: String, Codable
 	case typingIndicator
 
 	/// Error report for event previously sent by client; mostly for debugging purposes.
-	case error
+	case errorMessage
 }

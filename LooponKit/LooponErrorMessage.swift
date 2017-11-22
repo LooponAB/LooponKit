@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Object sent through the socket when there's an error.
 public class LooponErrorMessage: LooponEvent
 {
 	public var sessionId: String

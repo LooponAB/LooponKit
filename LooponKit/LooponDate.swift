@@ -91,16 +91,21 @@ public struct LooponDate: Codable
 
 	public enum Mode
 	{
-		/// Date only. Example: 2017-11-19
+		/// Date only.
+		/// Example: 2017-11-19
 		case dateOnly
 
-		/// Date and Time. Example: 2017-11-20T01:42:41Z
+		/// Date and Time.
+		/// Example: 2017-11-20T01:42:41Z
 		case dateWithTime
 
-		/// Date and Fractional Time. Example: 2017-11-21T17:50:48.813225Z
+		/// Date and Fractional Time.
+		/// Example: 2017-11-21T17:50:48.813225Z
 		case dateWithFractionalTime
 	}
 
+	/// Attempts to decode the date string using all supported formats. If successful, returns a tuple with the format
+	/// that was detected, and the date object. Otherwise returns nil.
 	private static func tryDecode(_ string: String) -> (Mode, Date)?
 	{
 		let modes: [Mode: DateFormatter] = [
